@@ -1,0 +1,76 @@
+{
+  "collectionName": "components_activity_activity_types",
+  "info": {
+    "displayName": "activity_type",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "audio": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "options": {
+      "displayName": "options",
+      "type": "component",
+      "repeatable": true,
+      "component": "activity.options"
+    },
+    "answer_code": {
+      "type": "string"
+    },
+    "answer_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "answer_audio": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "true_false",
+        "sort"
+      ]
+    },
+    "timer": {
+      "type": "integer"
+    },
+    "latitude": {
+      "type": "float"
+    },
+    "longitude": {
+      "type": "float"
+    },
+    "answer_text": {
+      "type": "richtext"
+    }
+  }
+}
