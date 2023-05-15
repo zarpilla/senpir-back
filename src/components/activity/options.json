@@ -30,6 +30,9 @@
     },
     "answer": {
       "type": "boolean"
+    },
+    "option_code": {
+      "type": "string"
     }
   }
 }
