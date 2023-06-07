@@ -52,6 +52,7 @@ async function start() {
     await setPermissions("public",       
       {
         "api::itinerary.itinerary": ["find", "findOne"],
+        "api::play.play": ["find", "create", "update"],
       }
     );
 }

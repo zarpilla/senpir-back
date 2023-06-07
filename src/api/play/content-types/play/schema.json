@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plays",
+  "info": {
+    "singularName": "play",
+    "pluralName": "plays",
+    "displayName": "Play"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "string"
+    },
+    "start": {
+      "type": "datetime"
+    },
+    "end": {
+      "type": "datetime"
+    },
+    "itinerary": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::itinerary.itinerary"
+    }
+  }
+}
