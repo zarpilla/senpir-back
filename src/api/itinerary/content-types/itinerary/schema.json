@@ -87,6 +87,13 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "character": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
