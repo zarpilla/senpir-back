@@ -23,7 +23,7 @@
     },
     "image_preview": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "allowedTypes": [
         "images"
