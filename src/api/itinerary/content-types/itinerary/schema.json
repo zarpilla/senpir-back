@@ -101,6 +101,13 @@
     },
     "city": {
       "type": "string"
+    },
+    "gpx": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
