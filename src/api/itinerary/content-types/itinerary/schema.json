@@ -103,11 +103,15 @@
       "type": "string"
     },
     "gpx": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "description_more": {
+      "type": "richtext"
     }
   }
 }
