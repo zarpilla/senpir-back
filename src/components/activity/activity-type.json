@@ -71,6 +71,9 @@
     },
     "answer_text": {
       "type": "richtext"
+    },
+    "help_text": {
+      "type": "string"
     }
   }
 }
