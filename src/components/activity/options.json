@@ -39,6 +39,9 @@
     },
     "image_cover": {
       "type": "boolean"
+    },
+    "image_bg": {
+      "type": "boolean"
     }
   }
 }
