@@ -33,6 +33,9 @@
     },
     "option_code": {
       "type": "string"
+    },
+    "image_overlay": {
+      "type": "boolean"
     }
   }
 }
