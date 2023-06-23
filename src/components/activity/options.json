@@ -36,6 +36,9 @@
     },
     "image_overlay": {
       "type": "boolean"
+    },
+    "image_cover": {
+      "type": "boolean"
     }
   }
 }
