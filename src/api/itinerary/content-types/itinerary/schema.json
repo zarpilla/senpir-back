@@ -112,6 +112,15 @@
     },
     "description_more": {
       "type": "richtext"
+    },
+    "distance": {
+      "type": "string"
+    },
+    "difficulty": {
+      "type": "string"
+    },
+    "unevenness": {
+      "type": "string"
     }
   }
 }
