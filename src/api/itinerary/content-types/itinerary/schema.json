@@ -121,6 +121,9 @@
     },
     "unevenness": {
       "type": "string"
+    },
+    "character_name": {
+      "type": "string"
     }
   }
 }
