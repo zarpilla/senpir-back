@@ -62,7 +62,11 @@
       "multiple": false,
       "required": false,
       "allowedTypes": [
-        "audios"
+        "audios",
+        "images",
+        "videos",
+        "audios",
+        "files"
       ]
     },
     "answer_image": {
@@ -78,7 +82,11 @@
       "multiple": false,
       "required": false,
       "allowedTypes": [
-        "audios"
+        "audios",
+        "images",
+        "videos",
+        "audios",
+        "files"
       ]
     },
     "answer_text": {

@@ -25,7 +25,11 @@
       "multiple": false,
       "required": false,
       "allowedTypes": [
-        "audios"
+        "audios",
+        "images",
+        "videos",
+        "audios",
+        "files"
       ]
     },
     "options": {
@@ -50,7 +54,11 @@
       "multiple": false,
       "required": false,
       "allowedTypes": [
-        "audios"
+        "audios",
+        "images",
+        "videos",
+        "audios",
+        "files"
       ]
     },
     "type": {
