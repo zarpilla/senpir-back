@@ -135,6 +135,16 @@
     },
     "order": {
       "type": "integer"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "qr": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
