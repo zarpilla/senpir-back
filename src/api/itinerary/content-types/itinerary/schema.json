@@ -140,11 +140,15 @@
       "type": "string"
     },
     "qr": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "disabled": {
+      "type": "boolean"
     }
   }
 }
