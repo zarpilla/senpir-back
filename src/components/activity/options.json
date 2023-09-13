@@ -46,6 +46,9 @@
     },
     "image_bg": {
       "type": "boolean"
+    },
+    "answer_name": {
+      "type": "string"
     }
   }
 }
