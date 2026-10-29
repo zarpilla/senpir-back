@@ -36,3 +36,30 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/senpir-back:master-${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    # one deploy at a time; a newer push waits for the running one
+    concurrency: production
+    steps:
+      - name: Deploy on the server
+        # The key is restricted on the server to run /var/www/senpir-strapi/deploy.sh only:
+        # it pulls the new image, restarts the container and rolls back if it is not healthy.
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_deploy && chmod 600 ~/.ssh/id_deploy
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh -i ~/.ssh/id_deploy -o IdentitiesOnly=yes -o BatchMode=yes "webcoop@$HOST" deploy
+
+      - name: Check the public API
+        run: |
+          for i in $(seq 1 10); do
+            curl -fs -o /dev/null https://api.senpir.alt-ter.org/api/itineraries && exit 0
+            sleep 3
+          done
+          echo "public API not answering" && exit 1
