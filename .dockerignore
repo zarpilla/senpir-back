@@ -1,0 +1,16 @@
+.git/
+.github/
+.tmp/
+.cache/
+tmp/
+node_modules/
+build/
+.strapi-updater.json
+*.log
+.env
+.env.*
+# uploads are a mounted volume
+public/uploads/*
+!public/uploads/.gitkeep
+Dockerfile
+.dockerignore
