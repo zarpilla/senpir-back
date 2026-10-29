@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - strapi-5
   workflow_dispatch:
 
 jobs:
@@ -31,14 +32,16 @@ jobs:
           # always pull the base image so its security fixes land on every rebuild
           pull: true
           # the server pulls `latest`; `master-<sha>` allows going back to a build
+          # master: `latest` (what the server runs) + `master-<sha>`; other branches: `<branch>` only
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/senpir-back:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/senpir-back:master-${{ github.sha }}
+            ${{ github.ref_name == 'master' && format('{0}/senpir-back:latest', secrets.DOCKERHUB_USERNAME) || '' }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/senpir-back:${{ github.ref_name == 'master' && format('master-{0}', github.sha) || github.ref_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
   deploy:
     needs: build-and-push
+    if: github.ref_name == 'master'
     runs-on: ubuntu-latest
     # one deploy at a time; a newer push waits for the running one
     concurrency: production

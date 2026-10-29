@@ -1,5 +1,6 @@
 module.exports = [
   'global::block-brotli',
+  'global::v4-response-format',
   'strapi::errors',
   'strapi::security',
   'strapi::cors',
